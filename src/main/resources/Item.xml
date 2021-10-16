@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="lab2.itemService.entity.Item">
+        <table name="Item" schema="itemService" catalog=""/>
+        <attributes>
+            <id name="itemNum">
+                <column name="item_id" precision="-1"/>
+            </id>
+            <basic name="itemName">
+                <column name="name" nullable="false" length="20"/>
+            </basic>
+            <basic name="itemInfo">
+                <column name="Info" nullable="false" length="20"/>
+            </basic>
+            <basic name="itemCount">
+                <column name="count" nullable="false" length="20"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
