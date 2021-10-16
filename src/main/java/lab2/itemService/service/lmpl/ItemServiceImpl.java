@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,6 +16,12 @@ import java.util.Objects;
 public class ItemServiceImpl implements ItemService {
 
     private ItemDao itemDao;
+
+    public ItemServiceImpl()
+    {
+        String hello = "Hello, world";
+        System.out.println(hello);
+    }
 
     @Override
     public List<Item> findByNUM(long num) {
@@ -28,7 +35,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> seeAll() {
-        return itemDao.findAll();
+        return new ArrayList<Item>();
+        // return itemDao.findAll();
     }
 
     @Override

@@ -2,6 +2,7 @@ package lab2.itemService.controller;
 
 import lab2.itemService.entity.Item;
 import lab2.itemService.service.ItemService;
+import lab2.itemService.service.lmpl.ItemServiceImpl;
 import lab2.itemService.util.JsonResult;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpEntity;
@@ -14,10 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 public class itemController {
 
-    private ItemService itemService;
+    private ItemService itemService = new ItemServiceImpl();
 
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     public HttpEntity<String> viewAll(){
+        System.out.println("where are you ?\n");
+        System.out.println(itemService);
         List<Item> itemList = itemService.seeAll();
         return JsonResult.success(itemList).toHttpEntity();
     }
