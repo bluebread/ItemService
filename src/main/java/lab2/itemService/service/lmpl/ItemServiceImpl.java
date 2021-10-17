@@ -25,12 +25,14 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> findByNUM(long num) {
-        return itemDao.findByitemNum(num);
+        return new ArrayList<Item>();
+        // return itemDao.findByitemNum(num);
     }
 
     @Override
     public List<Item> findByName(String name) {
-        return itemDao.findByitemName(name);
+        return new ArrayList<Item>();
+        // return itemDao.findByitemName(name);
     }
 
     @Override
@@ -41,21 +43,23 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public boolean deleteByNum(long id) {
-        List<Item> item = itemDao.findByitemNum(id);
-        if(Objects.isNull(item)) {
-            return false;
-        }
-        itemDao.deleteByitemNum(id);
         return true;
+        // List<Item> item = itemDao.findByitemNum(id);
+        // if(Objects.isNull(item)) {
+        //     return false;
+        // }
+        // itemDao.deleteByitemNum(id);
+        // return true;
     }
 
     @Override
     public boolean update(Item item) {
-        List<Item> it = itemDao.findByitemNum(item.getItemNum());
-        if(Objects.isNull(it)) {
-            return false;
-        }
-        itemDao.save(item);
         return true;
+        // List<Item> it = itemDao.findByitemNum(item.getItemNum());
+        // if(Objects.isNull(it)) {
+        //     return false;
+        // }
+        // itemDao.save(item);
+        // return true;
     }
 }

@@ -19,8 +19,6 @@ public class itemController {
 
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     public HttpEntity<String> viewAll(){
-        System.out.println("where are you ?\n");
-        System.out.println(itemService);
         List<Item> itemList = itemService.seeAll();
         return JsonResult.success(itemList).toHttpEntity();
     }
